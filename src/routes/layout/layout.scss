@@ -1,12 +1,23 @@
 @import '../../responsive.scss';
 
 .layout {
-  max-width: 1024px;
+  max-width: 1200px;
   height: 100vh;
   margin: 0 auto;
   padding: 0 29px;
   display: flex;
   flex-direction: column;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: #bebebe75;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #7e7c78c7;
+    border-radius: 3px;
+  }
 
   @include lg {
     // background-color: rgb(247, 210, 196);
