@@ -1,8 +1,16 @@
+@import '../../responsive.scss';
+
 .slider {
   display: flex;
   width: 100%;
   height: calc((100vh - 100px) / 2);
   gap: 20px;
+
+  @include sm {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: max-content;
+  }
 
   .fullSlider {
     display: flex;
@@ -29,12 +37,20 @@
         &.right {
           transform: rotate(180deg);
         }
+
+        @include sm {
+          width: 20px;
+        }
       }
     }
 
     .imgContainer {
       flex: 10;
       height: 90%;
+
+      @include md {
+        height: 60%;
+      }
 
       img {
         height: 100%;
@@ -52,6 +68,16 @@
       font-size: 28px;
       font-weight: 600;
       cursor: pointer;
+
+      @include md {
+        right: 15px;
+        top: 15px;
+      }
+
+      @include sm {
+        right: 0px;
+        top: 10px;
+      }
     }
   }
 
@@ -65,6 +91,11 @@
 
   .bigImage {
     flex: 3;
+
+    @include sm {
+      flex: none;
+      width: 100%;
+    }
   }
   .smallImages {
     flex: 1;
@@ -76,8 +107,23 @@
     gap: 10px;
     padding-right: 10px;
 
+    @include sm {
+      width: 100%;
+      flex-direction: row;
+      overflow-y: hidden;
+      padding-bottom: 10px;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+    }
+
     img {
       height: 30%;
+
+      @include sm {
+        height: 75px;
+      }
     }
   }
 }
