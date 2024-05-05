@@ -6,7 +6,8 @@ nav {
   justify-content: space-between;
   height: 100px;
 
-  a, Link {
+  a,
+  Link {
     transition: all 0.4s ease;
     &:hover {
       scale: 1.05;
@@ -58,9 +59,57 @@ nav {
       background: transparent;
     }
 
-    a, Link {
+    a,
+    Link {
       margin-right: 20px;
       padding: 12px 24px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      img {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .name {
+        margin-right: 20px;
+      }
+
+      @include md {
+        .name {
+          display: none;
+        }
+      }
+
+      .profile {
+        background: #fece51;
+        border-radius: 5px;
+        border: none;
+        position: relative;
+        padding: 6px 12px;
+
+        .notification {
+          background: red;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          top: -8px;
+          right: -10px;
+          font-size: 13px;
+        }
+      }
     }
 
     .register {
